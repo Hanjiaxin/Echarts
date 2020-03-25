@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>表格</title>
+    <!--Handsontable的引用-->
+    <script src="https://cdn.jsdelivr.net/npm/handsontable-pro@6.2.2/dist/handsontable.full.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/handsontable-pro@6.2.2/dist/handsontable.full.min.css" rel="stylesheet" media="screen">
+    <script type="text/javascript">
+        window.onload=function (ev) {
+            var data = [
+                ["Java", 1, "降","-0.01%"],
+                ["C", 2, "升", "+2.44%"],
+                ["Python", 3, "升","+1.41%"],
+                ["C++", 4, "降","-2.58%"],
+                ["C#", 5, "升","+2.07%"],
+                ["Visual Basis .NET", 6, "降","-1.17%"],
+                ["JavaSprict", 7, "降","-0.85%"],
+            ];
+            var container = document.getElementById('example');
+            var hot = new Handsontable(container, {
+                data: data,
+                rowHeaders: false,
+                colHeaders: ["语言名称", "排名", "升或降", "变化幅度"],
+                colWidths:150,
+                filters: true,
+                dropdownMenu: true,
+                className:'htCenter'
+            });
+        }
+    </script>
+</head>
+<body class="no-skin">
+<!--handsontable开始的地方-->
+<span style="margin-left: 200px;font-size: 15px">2020语言排行榜</span>
+<div id="example" style="margin-top: 10px"></div>
+</body>
+</html>
